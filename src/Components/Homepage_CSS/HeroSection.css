@@ -1,0 +1,128 @@
+.hero-section {
+  background-color: #6347d1;
+  color: white;
+  text-align: center;
+  padding: 40px 20px 0 20px; /* Reduced top padding for mobile */
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.hero-illustration {
+  width: 100%;
+  max-width: 350px; /* Limit size on desktop */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  /* Fluid font size: scales between 32px and 52px based on screen width */
+  font-size: clamp(32px, 8vw, 52px); 
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 4vw, 19px);
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  padding: 0 15px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* CRITICAL: Allows items to wrap on smaller screens */
+  padding-bottom: 120px;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-width: 100px; /* Ensures consistent look on mobile */
+}
+
+.feature-card:hover {
+  transform: scale(1.15);
+}
+
+.feature-icon-circle {
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6347d1;
+  font-size: 28px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.feature-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* --- Media Queries for Specific Adjustments --- */
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 20px;
+  }
+  
+  .feature-grid {
+    gap: 20px; /* Tighter gap on tablets/phones */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-wave {
+    height: 60px; /* Smaller wave on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-illustration {
+    max-width: 250px;
+  }
+  
+  .feature-icon-circle {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -2px; /* Prevent tiny gap */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  width: 100%;
+  height: 100%;
+}
