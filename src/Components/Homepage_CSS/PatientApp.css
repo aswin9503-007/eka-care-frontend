@@ -1,0 +1,182 @@
+.patient-app-section {
+  padding: 40px 20px 80px 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.patient-app-card {
+  background: linear-gradient(135deg, #f3f0ff 0%, #ffffff 100%);
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+  overflow: hidden;
+}
+
+/* Image Container Logic */
+.patient-image-container {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.family-img {
+  width: 115%; /* Slight overflow to match design */
+  height: auto;
+  transform: translateY(60px); /* Aligns base of family/phone to card bottom */
+}
+
+/* Content Logic */
+.patient-content {
+  flex: 1;
+  text-align: left;
+}
+
+.patient-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #6347d1;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+
+.patient-heading {
+  font-size: clamp(32px, 4vw, 56px);
+  font-family: 'Playfair Display', serif;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.purple-text {
+  color: #6347d1;
+}
+
+.patient-subtext {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* Ratings Section */
+.patient-ratings {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-item img {
+  height: 40px;
+}
+
+.rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-info strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.rating-info span {
+  font-size: 12px;
+  color: #888;
+}
+
+.stars {
+  font-size: 24px;
+  font-weight: 800;
+  color: #333;
+}
+
+.rating-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #ddd;
+}
+
+/* Button */
+.learn-more-btn-purple {
+  background-color: #6347d1;
+  color: white;
+  border: none;
+  padding: 16px 38px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.learn-more-btn-purple:hover {
+  background-color: #5138b1;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVENESS --- */
+
+@media (max-width: 1024px) {
+  .patient-app-card {
+    flex-direction: column-reverse; /* Content on top, Image on bottom for mobile */
+    padding: 40px;
+    text-align: center;
+  }
+
+  .patient-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .patient-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .family-img {
+    width: 100%;
+    transform: translateY(0);
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .patient-ratings {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rating-divider {
+    display: none;
+  }
+
+  .patient-heading {
+    font-size: 34px;
+  }
+
+  .patient-app-card {
+    border-radius: 30px;
+    padding: 30px 20px;
+  }
+}

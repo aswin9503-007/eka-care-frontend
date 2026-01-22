@@ -1,0 +1,149 @@
+.dr-tool-section {
+    padding: 60px 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.dr-tool-card {
+    background: linear-gradient(135deg, #ffffff 0%, #a2c8ee 100%);
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 40px;
+    display: flex;
+    padding: 60px;
+    overflow: hidden;
+    
+}
+
+.dr-content {
+    flex: 1;
+    text-align: left;
+}
+
+.dr-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #2b61ff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid #cecbcb;
+    margin-bottom: 25px;
+}
+
+.dr-heading {
+    font-size: clamp(32px, 4vw, 56px);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.blue-text {
+    color: #2b61ff;
+}
+
+.dr-subtext {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Badges Grid */
+.dr-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.trust-img {
+    height: 35px;
+    width: auto;
+    opacity: 0.8;
+    filter: grayscale(1);
+}
+
+.trust-item span{
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
+}
+
+.learn-more-btn {
+    background-color: #6347d1;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #4f36b1;
+}
+
+.dr-image-container {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.main-dr-img {
+    width: 110%;
+    height: auto;
+    transform: translateY(60px);
+}
+
+
+/*  Media Queries Responsiveness */
+
+@media (max-width: 1024px) {
+    .dr-tool-card {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .dr-image-container {
+        margin-top: 40px;
+    }
+
+    .main-dr-img {
+        width: 100%;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .dr-tool-card {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    .dr-heading {
+        font-size: 32px;
+    }
+
+    .dr-trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
