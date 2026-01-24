@@ -1,5 +1,5 @@
 .patient-app-section {
-  padding: 40px 20px 80px 20px;
+  padding: 60px 20px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -11,30 +11,38 @@
   max-width: 1200px;
   border-radius: 40px;
   display: flex;
-  align-items: center;
-  padding: 60px;
-  gap: 40px;
+  align-items: stretch; /* Stretch content and image to full height */
+  /* Remove padding from the left to let image touch the edge */
+  padding: 0 60px 0 0; 
+  gap: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-  overflow: hidden;
+  overflow: hidden; /* Important: clips the image to the card's rounded corners */
+  border: 1px solid #f0f0f5;
 }
 
-/* Image Container Logic */
+/* --- Image Container Fix --- */
 .patient-image-container {
   flex: 1.2;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  align-items: flex-end; /* Pin image to bottom */
+  justify-content: flex-start; /* Pin image to left */
+  overflow: hidden;
 }
 
 .family-img {
-  width: 115%; /* Slight overflow to match design */
+  width: 100%;
   height: auto;
-  transform: translateY(60px); /* Aligns base of family/phone to card bottom */
+  display: block;
+  /* Object position ensures the group stays pinned to bottom-left */
+  object-fit: contain;
+  object-position: left bottom;
+  /* Transform is no longer needed if container is align-items: flex-end */
 }
 
-/* Content Logic */
+/* --- Content Styling --- */
 .patient-content {
   flex: 1;
+  padding: 60px 0 60px 20px; /* Space top/bottom/left */
   text-align: left;
 }
 
@@ -50,6 +58,7 @@
   font-size: 13px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   margin-bottom: 25px;
+  border: 1px solid #eee;
 }
 
 .patient-heading {
@@ -69,51 +78,25 @@
   color: #555;
   line-height: 1.6;
   margin-bottom: 35px;
+  max-width: 500px;
 }
 
-/* Ratings Section */
+/* Ratings */
 .patient-ratings {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   margin-bottom: 40px;
-}
-
-.rating-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.rating-item img {
-  height: 40px;
-}
-
-.rating-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.rating-info strong {
-  font-size: 16px;
-  color: #333;
-}
-
-.rating-info span {
-  font-size: 12px;
-  color: #888;
-}
-
-.stars {
-  font-size: 24px;
-  font-weight: 800;
-  color: #333;
 }
 
 .rating-divider {
   width: 1px;
   height: 40px;
-  background-color: #ddd;
+  background-color: #e0e0e0;
+}
+
+.rating-item img {
+  height: 45px;
 }
 
 /* Button */
@@ -126,57 +109,57 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .learn-more-btn-purple:hover {
   background-color: #5138b1;
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 71, 209, 0.2);
 }
 
 /* --- RESPONSIVENESS --- */
 
 @media (max-width: 1024px) {
   .patient-app-card {
-    flex-direction: column-reverse; /* Content on top, Image on bottom for mobile */
-    padding: 40px;
+    flex-direction: column; /* Normal column order for mobile */
+    padding: 0; /* Reset for mobile */
     text-align: center;
   }
 
   .patient-content {
+    order: 1; /* Text at top */
+    padding: 40px 20px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
-  .patient-subtext {
-    margin-left: auto;
-    margin-right: auto;
+  .patient-image-container {
+    order: 2; /* Image at bottom */
+    width: 100%;
   }
 
   .family-img {
     width: 100%;
-    transform: translateY(0);
-    margin-top: 40px;
+    max-width: 500px; /* Keep family group size reasonable on tablet */
   }
 }
 
 @media (max-width: 600px) {
-  .patient-ratings {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .rating-divider {
-    display: none;
-  }
-
   .patient-heading {
-    font-size: 34px;
+    font-size: 28px;
+  }
+  
+  .patient-ratings {
+    gap: 15px;
   }
 
-  .patient-app-card {
-    border-radius: 30px;
-    padding: 30px 20px;
+  .learn-more-btn-purple {
+    width: 100%;
+    justify-content: center;
   }
 }

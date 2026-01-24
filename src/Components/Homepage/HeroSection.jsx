@@ -1,11 +1,10 @@
-import React from "react";
 import "../Homepage_CSS/HeroSection.css";
 
 const HeroSection = () => {
   const features = [
     { icon: "🏠", name: "Doctors" },
     { icon: "👥", name: "Patients" },
-    { icon: "💻", name: "Developers" }, // Changed to emoji for consistency
+    { icon: "💻", name: "Developers" }, 
     { icon: "🏥", name: "Hospitals" },
   ];
 

@@ -3,6 +3,8 @@ import HeroSection from "../Components/Homepage/HeroSection";
 import DoctorTool from "../Components/Homepage/DoctorTool";
 import PatientApp from "../Components/Homepage/PatientApp";
 import DeveloperApp from "../Components/Homepage/DeveloperApp";
+import IndustryShowcase from "../Components/Homepage/industryShowcase";
+import Partners from "../Components/Homepage/Partners";
 
 const Homepage = () => {
   return (
@@ -12,6 +14,8 @@ const Homepage = () => {
       <DoctorTool />
       <PatientApp />
       <DeveloperApp />
+      <IndustryShowcase />
+      <Partners />
     </>
   );
 };

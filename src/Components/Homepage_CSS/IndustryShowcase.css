@@ -1,0 +1,134 @@
+.industry-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.industry-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.healthcare-card {
+  /* Gradient matching the right-side glow in your image */
+  background: linear-gradient(105deg, #ffffff 60%, #eafaf1 100%);
+  border-radius: 40px;
+  display: flex;
+  align-items: stretch; /* Stretch to ensure image container hits bottom */
+  overflow: hidden; /* Clips the image to the border-radius */
+  border: 1px solid #efefef;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  position: relative;
+  min-height: 480px;
+}
+
+/* --- The Secret to Touching the Edge --- */
+.card-image-wrapper {
+  flex: 1.1;
+  display: flex;
+  align-items: flex-end; /* Pushes image to the bottom */
+  padding: 0; /* Remove all padding to touch the left edge */
+  margin: 0;
+  overflow: hidden;
+}
+
+.doctors-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: left bottom; /* Forces image to stay left and down */
+}
+
+.card-content {
+  flex: 1;
+  padding: 60px 60px 60px 20px; /* Plenty of space on the right */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.industry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 25px;
+  width: fit-content;
+}
+
+.card-title {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  color: #0f172a;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.card-title span {
+  color: #22c55e;
+}
+
+.card-description {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  max-width: 500px;
+}
+
+.learn-more-cta {
+  background: #6366f1;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.learn-more-cta:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 992px) {
+  .healthcare-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .card-image-wrapper {
+    order: 2; /* Image goes to bottom on mobile */
+    width: 100%;
+  }
+
+  .card-content {
+    order: 1; /* Text stays at top */
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.7rem;
+  }
+  .card-content {
+    padding: 30px 20px;
+  }
+}
