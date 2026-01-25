@@ -5,6 +5,7 @@ import PatientApp from "../Components/Homepage/PatientApp";
 import DeveloperApp from "../Components/Homepage/DeveloperApp";
 import IndustryShowcase from "../Components/Homepage/industryShowcase";
 import Partners from "../Components/Homepage/Partners";
+import AboutUs from "../Components/Homepage/AboutUs";
 
 const Homepage = () => {
   return (
@@ -16,6 +17,8 @@ const Homepage = () => {
       <DeveloperApp />
       <IndustryShowcase />
       <Partners />
+      <AboutUs />
+
     </>
   );
 };
